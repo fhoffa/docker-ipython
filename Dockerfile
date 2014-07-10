@@ -109,10 +109,8 @@ ENV IPYTHONDIR /home/ipy/.ipython
 ENV IPYTHON_PROFILE nbserver
 RUN /usr/local/bin/ipython profile create nbserver
 
-# Download world cup notebooks
+# Sample notebooks
 ADD ./notebooks /home/ipy/ipynotebooks
-RUN mkdir -p /etc/my_init.d
-ADD notebook_clone.sh /etc/my_init.d/notebook_clone.sh
 
 # Adding script necessary to start ipython notebook server.
 ADD ./profile_nbserver/ipython_notebook_config.py /home/ipy/.ipython/profile_nbserver/ipython_notebook_config.py
